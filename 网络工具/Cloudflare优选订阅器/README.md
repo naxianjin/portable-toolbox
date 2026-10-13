@@ -1,11 +1,11 @@
 # Cloudflare 优选 IP 订阅器 · 网页测速助手
 
-在网页输入自己的 VLESS + WebSocket + TLS 节点，点击按钮，由本机内置 CFST 测量连接延迟和下载速度，再用 Xray 复测完整连接。成功后自动回填 15 个优选 IP，前 10 条均通过复测；核对发布后，客户端更新同一订阅地址即可使用新结果。
+在网页输入自己的 VLESS + WebSocket + TLS 节点，点击按钮，由本机内置 CFST 测量连接延迟和下载速度，再用 Xray 复测完整连接。成功后自动回填 15 个优选 IP，前 10 条均通过复测；核对发布后即可导入客户端。同一原节点重新测速沿用订阅地址，更换原节点会生成新地址。
 
 ## 下载
 
-- [下载 Windows x64 便携包](https://github.com/naxianjin/portable-toolbox/releases/download/cfsub-v1.2.0/Cloudflare-IP-Subscription-Windows-x64.zip)
-- [本版发布页与 SHA-256 校验文件](https://github.com/naxianjin/portable-toolbox/releases/tag/cfsub-v1.2.0)
+- [下载 Windows x64 便携包](https://github.com/naxianjin/portable-toolbox/releases/download/cfsub-v1.3.0/Cloudflare-IP-Subscription-Windows-x64.zip)
+- [本版发布页与 SHA-256 校验文件](https://github.com/naxianjin/portable-toolbox/releases/tag/cfsub-v1.3.0)
 - [PDF 使用指南](使用指南.pdf)
 - [在线订阅器](https://cloudflaresub.naxianjin8.workers.dev/)
 
@@ -25,7 +25,13 @@
 
 ## 升级并保留已有设备数据
 
-等测速结束并关闭网页，仅将新包的“程序”目录复制到旧版同级位置并替换，再运行原来的“打开订阅器.cmd”。保留旧版根目录的本机配置、我的节点、设备身份与运行结果，不要用新包的空白配置覆盖它们。另一个全新解压目录会建立新的设备空间。
+等测速结束并关闭网页，将新包的“程序”目录和四个 `.cmd` 启动入口复制到旧版同级位置并替换，再运行原来的“打开订阅器.cmd”。保留旧版根目录的本机配置、我的节点、设备身份与运行结果，不要用新包的空白配置覆盖它们。另一个全新解压目录会建立新的设备空间。
+
+v1.3.0 修复了旧版 CMD 换行格式导致的命令截断。本机节点为空时，“开始测速.cmd”会打开填写窗口，保存后继续，取消则退出。
+
+## 更换原始节点与订阅地址
+
+只更新优选 IP 或备注时沿用地址。更换原始节点后，发布预览会提示生成新地址；确认后请替换客户端中的订阅地址，旧地址会失效。若已在旧版换过原节点却仍沿用旧地址，可勾选“生成新订阅地址（旧地址将失效）”后确认发布。Cloudflare KV 的内容更新与旧地址失效可能需要 60 秒或更久。
 
 ## 测速规则
 
