@@ -4,8 +4,8 @@
 
 ## 下载
 
-- [下载 Windows x64 便携包](https://github.com/naxianjin/portable-toolbox/releases/download/cfsub-v1.1.0/Cloudflare-IP-Subscription-Windows-x64.zip)
-- [本版发布页与 SHA-256 校验文件](https://github.com/naxianjin/portable-toolbox/releases/tag/cfsub-v1.1.0)
+- [下载 Windows x64 便携包](https://github.com/naxianjin/portable-toolbox/releases/download/cfsub-v1.2.0/Cloudflare-IP-Subscription-Windows-x64.zip)
+- [本版发布页与 SHA-256 校验文件](https://github.com/naxianjin/portable-toolbox/releases/tag/cfsub-v1.2.0)
 - [PDF 使用指南](使用指南.pdf)
 - [在线订阅器](https://cloudflaresub.naxianjin8.workers.dev/)
 
@@ -19,7 +19,13 @@
 4. 等待网页显示测速与完整连接复测进度。成功后自动填入 15 个入口，通过者按下载速度优先排列，前 10 条供订阅使用。
 5. 点击 **预览并更新订阅**，核对并确认发布。到 **订阅结果** 复制对应客户端的地址或扫码导入。
 
+可先点击“检查连接”，无需输入节点，即可查看助手版本与测速文件是否齐全。测速时显示三个阶段和已用时间，读取进度短暂中断会自动重试。旧版助手仍可使用原测速流程。
+
 无需打开测速窗口、复制 IP 或手动导入 CSV。测速只回填草稿，确认发布后才更新 Cloudflare KV。刷新网页或助手空闲退出后提示未连接时，再次双击“打开订阅器.cmd”即可。
+
+## 升级并保留已有设备数据
+
+等测速结束并关闭网页，仅将新包的“程序”目录复制到旧版同级位置并替换，再运行原来的“打开订阅器.cmd”。保留旧版根目录的本机配置、我的节点、设备身份与运行结果，不要用新包的空白配置覆盖它们。另一个全新解压目录会建立新的设备空间。
 
 ## 测速规则
 
