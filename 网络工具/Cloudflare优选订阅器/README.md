@@ -4,8 +4,8 @@
 
 ## 下载
 
-- [下载 Windows x64 便携包](https://github.com/naxianjin/portable-toolbox/releases/download/cfsub-v1.3.3/Cloudflare-IP-Subscription-Windows-x64.zip)
-- [本版发布页与 SHA-256 校验文件](https://github.com/naxianjin/portable-toolbox/releases/tag/cfsub-v1.3.3)
+- [下载 Windows x64 便携包](https://github.com/naxianjin/portable-toolbox/releases/download/cfsub-v1.3.4/Cloudflare-IP-Subscription-Windows-x64.zip)
+- [本版发布页与 SHA-256 校验文件](https://github.com/naxianjin/portable-toolbox/releases/tag/cfsub-v1.3.4)
 - [PDF 使用指南](使用指南.pdf)
 - [在线订阅器](https://cloudflaresub.naxianjin8.workers.dev/)
 
@@ -36,6 +36,8 @@ v1.3.1 修复进度读取不完整、刷新后连接丢失，以及读不到进�
 v1.3.2 固定测试 30 个低延迟候选，再从中筛选 15 个达到速度门槛的入口。默认下载阶段最长约 5 分钟，不会为了凑够达标入口而一直遍历全部候选；界面会说明 0/30 或 0/15 的含义。
 
 v1.3.3 在本轮完整复测通过不足 10 个时，临时重新测速上次入口，只取补足发布门槛所需的最快入口。最终 15 条优先排列本轮新通过入口，前 10 条均通过完整复测。
+
+v1.3.4 让网页测速与“开始测速.cmd”共用同一套旧入口补位规则，并按 home、work、hotspot 等网络场景分别读取上次结果。重复、异端口、零速、测速失败或完整复测失败的旧入口不会补位；失败或取消时不覆盖原结果和线上订阅。便携包不再包含 `node_modules` 目录，固定版本的必要运行库改放在包内 vendor 目录。
 
 ## 更换原始节点与订阅地址
 
