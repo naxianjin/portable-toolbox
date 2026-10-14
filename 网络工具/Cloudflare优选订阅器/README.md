@@ -4,8 +4,8 @@
 
 ## 下载
 
-- [下载 Windows x64 便携包](https://github.com/naxianjin/portable-toolbox/releases/download/cfsub-v1.3.4/Cloudflare-IP-Subscription-Windows-x64.zip)
-- [本版发布页与 SHA-256 校验文件](https://github.com/naxianjin/portable-toolbox/releases/tag/cfsub-v1.3.4)
+- [下载 Windows x64 便携包](https://github.com/naxianjin/portable-toolbox/releases/download/cfsub-v1.3.5/Cloudflare-IP-Subscription-Windows-x64.zip)
+- [本版发布页与 SHA-256 校验文件](https://github.com/naxianjin/portable-toolbox/releases/tag/cfsub-v1.3.5)
 - [PDF 使用指南](使用指南.pdf)
 - [在线订阅器](https://cloudflaresub.naxianjin8.workers.dev/)
 
@@ -27,7 +27,13 @@
 
 ## 升级并保留已有设备数据
 
-等测速结束并关闭网页，将新包的“程序”目录和四个 `.cmd` 启动入口复制到旧版同级位置并替换，再运行原来的“打开订阅器.cmd”。保留旧版根目录的本机配置、我的节点、设备身份与运行结果，不要用新包的空白配置覆盖它们。另一个全新解压目录会建立新的设备空间。
+等测速结束并关闭网页。旧助手仍可能占用 Node，先在 PowerShell 使用新包的运行时和脚本退出经过身份核对的空闲助手：
+
+```powershell
+& '新包目录\程序\运行时\node.exe' '新包目录\程序\tools\local-speedtest.mjs' --stop --config '旧目录\本机配置.json'
+```
+
+将“新包目录”和“旧目录”换成实际路径。助手仍在测速时会拒绝退出。退出成功后，把旧“程序”目录和四个 CMD 移到可恢复归档，再复制新包的“程序”目录和四个 CMD，运行旧目录中的新版“打开订阅器.cmd”。保留旧根目录的配置、节点、身份、运行结果和发布事务，不要用新包的空白配置覆盖它们。新助手重复启动时复用同一端口；新网页遇到旧助手会明确提示升级。
 
 v1.3.0 修复了旧版 CMD 换行格式导致的命令截断。本机节点为空时，“开始测速.cmd”会打开填写窗口，保存后继续，取消则退出。
 
@@ -38,6 +44,8 @@ v1.3.2 固定测试 30 个低延迟候选，再从中筛选 15 个达到速度�
 v1.3.3 在本轮完整复测通过不足 10 个时，临时重新测速上次入口，只取补足发布门槛所需的最快入口。最终 15 条优先排列本轮新通过入口，前 10 条均通过完整复测。
 
 v1.3.4 让网页测速与“开始测速.cmd”共用同一套旧入口补位规则，并按 home、work、hotspot 等网络场景分别读取上次结果。重复、异端口、零速、测速失败或完整复测失败的旧入口不会补位；失败或取消时不覆盖原结果和线上订阅。便携包不再包含 `node_modules` 目录，固定版本的必要运行库改放在包内 vendor 目录。
+
+v1.3.5 修复 IPv6 等价文本重复计数、旧入口绕过最低速度和 CLI 复测结束时取消仍可能上传的问题。上传前先暂存与备份本地结果；替换失败会回退已替换文件。上传响应丢失时线上可能已更新，终端会提示发布事务目录，并暂停再次自动发布。按 PDF 的 `--recover-local` 命令读取线上当前版本，与暂存匹配后恢复本地结果，不重复上传。本地文件和远程 KV 无法一起原子提交；磁盘持续故障或进程突然退出时需保留事务目录继续恢复。事务内容含节点与订阅地址，不得分享。
 
 ## 更换原始节点与订阅地址
 
