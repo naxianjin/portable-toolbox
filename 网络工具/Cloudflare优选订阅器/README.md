@@ -4,8 +4,8 @@
 
 ## 下载
 
-- [下载 Windows x64 便携包](https://github.com/naxianjin/portable-toolbox/releases/download/cfsub-v1.3.2/Cloudflare-IP-Subscription-Windows-x64.zip)
-- [本版发布页与 SHA-256 校验文件](https://github.com/naxianjin/portable-toolbox/releases/tag/cfsub-v1.3.2)
+- [下载 Windows x64 便携包](https://github.com/naxianjin/portable-toolbox/releases/download/cfsub-v1.3.3/Cloudflare-IP-Subscription-Windows-x64.zip)
+- [本版发布页与 SHA-256 校验文件](https://github.com/naxianjin/portable-toolbox/releases/tag/cfsub-v1.3.3)
 - [PDF 使用指南](使用指南.pdf)
 - [在线订阅器](https://cloudflaresub.naxianjin8.workers.dev/)
 
@@ -35,6 +35,8 @@ v1.3.1 修复进度读取不完整、刷新后连接丢失，以及读不到进�
 
 v1.3.2 固定测试 30 个低延迟候选，再从中筛选 15 个达到速度门槛的入口。默认下载阶段最长约 5 分钟，不会为了凑够达标入口而一直遍历全部候选；界面会说明 0/30 或 0/15 的含义。
 
+v1.3.3 在本轮完整复测通过不足 10 个时，临时重新测速上次入口，只取补足发布门槛所需的最快入口。最终 15 条优先排列本轮新通过入口，前 10 条均通过完整复测。
+
 ## 更换原始节点与订阅地址
 
 只更新优选 IP 或备注时沿用地址。更换原始节点后，发布预览会提示生成新地址；确认后请替换客户端中的订阅地址，旧地址会失效。若已在旧版换过原节点却仍沿用旧地址，可勾选“生成新订阅地址（旧地址将失效）”后确认发布。Cloudflare KV 的内容更新与旧地址失效可能需要 60 秒或更久。
@@ -42,8 +44,8 @@ v1.3.2 固定测试 30 个低延迟候选，再从中筛选 15 个达到速度�
 ## 测速规则
 
 - 默认选择无探测丢包、连接延迟不超过 200 ms、下载速度至少 0.1 MB/s 的 15 个 IP。
-- Xray 对每个入口发起 3 次完整 HTTPS 请求，至少 10 个入口全部请求通过后才回填。
-- 发布时优先选用完整复测全部通过的入口，同组按 CFST 下载速度降序排列。
+- Xray 对每个入口发起 3 次完整 HTTPS 请求；本轮通过不足 10 个时，会重新测速上次入口并选择最快的合格入口补位。
+- 最终顺序为本轮新通过入口、旧入口补位、本轮其他候选，前 10 条均通过完整复测。
 - CFST 最长运行 20 分钟，之后还有完整节点复测。可以取消；失败、取消或数量不足时保留已有入口和订阅。
 - CFST 连接延迟、CFST 下载速度和完整 HTTPS 请求耗时是不同指标。实际代理下载速度可在客户端另测。
 
@@ -70,7 +72,7 @@ v1.3.2 固定测试 30 个低延迟候选，再从中筛选 15 个达到速度�
 
 **找不到 Node 或 Xray**：检查是否完整解压，入口和整个“程序”目录应保留在一起。
 
-**测速不够 15 个或复测通过不足 10 个**：检查原始节点是否可用、网络状态及 CFST 是否被其他代理接管，再重新测速。
+**测速不够 15 个或新旧入口合计仍不足 10 个**：检查原始节点是否可用、网络状态及 CFST 是否被其他代理接管，再重新测速。
 
 **客户端连接**：v2rayN / v2rayNG 使用 Raw；支持 VLESS 的 Clash / Mihomo 使用 Clash 格式；Shadowrocket 使用对应入口。实际使用节点仍需要自己的代理客户端。纯 VLESS 不提供 Surge 导出。
 
