@@ -4,8 +4,8 @@
 
 ## 下载
 
-- [下载 Windows x64 便携包](https://github.com/naxianjin/portable-toolbox/releases/download/cfsub-v1.3.1/Cloudflare-IP-Subscription-Windows-x64.zip)
-- [本版发布页与 SHA-256 校验文件](https://github.com/naxianjin/portable-toolbox/releases/tag/cfsub-v1.3.1)
+- [下载 Windows x64 便携包](https://github.com/naxianjin/portable-toolbox/releases/download/cfsub-v1.3.2/Cloudflare-IP-Subscription-Windows-x64.zip)
+- [本版发布页与 SHA-256 校验文件](https://github.com/naxianjin/portable-toolbox/releases/tag/cfsub-v1.3.2)
 - [PDF 使用指南](使用指南.pdf)
 - [在线订阅器](https://cloudflaresub.naxianjin8.workers.dev/)
 
@@ -32,6 +32,8 @@
 v1.3.0 修复了旧版 CMD 换行格式导致的命令截断。本机节点为空时，“开始测速.cmd”会打开填写窗口，保存后继续，取消则退出。
 
 v1.3.1 修复进度读取不完整、刷新后连接丢失，以及读不到进度时自动取消任务的问题。升级后需要启动一次新版助手。
+
+v1.3.2 固定测试 30 个低延迟候选，再从中筛选 15 个达到速度门槛的入口。默认下载阶段最长约 5 分钟，不会为了凑够达标入口而一直遍历全部候选；界面会说明 0/30 或 0/15 的含义。
 
 ## 更换原始节点与订阅地址
 
