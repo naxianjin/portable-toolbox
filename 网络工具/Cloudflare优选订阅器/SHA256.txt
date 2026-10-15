@@ -1,2 +1,2 @@
-94e9934c95f6b8b6ff96ef4fa93c01a999489f2ff341167cb5449348545d0576  Cloudflare-IP-Subscription-Windows-x64.zip
-e5817dde1e6814f53fa55d6d05008bb9db545e8b332c112ce48828d9dd804dee  Cloudflare-IP-Subscription-Guide.pdf
+d3fc4b90154b0fdc274e2d094a9009b4d35f8080ab0d7b8c0acbe01ddb0acc51  Cloudflare-IP-Subscription-Windows-x64.zip
+9aabf0f3a79df26e1aab0746ad9fd70f221377bb295fd5576d120a22a7c42314  Cloudflare-IP-Subscription-Guide.pdf
