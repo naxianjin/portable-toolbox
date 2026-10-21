@@ -7,12 +7,13 @@
 | 分类 | 工具 | 平台 | 入口 |
 | --- | --- | --- | --- |
 | 网络工具 | Cloudflare 优选 IP 订阅器 · 网页测速助手 | Windows 10 / 11 x64 | [说明与下载](网络工具/Cloudflare优选订阅器/README.md) |
+| 网络工具 | 云优选手机版 · 测试版 | Android 8+ / ARM64 | [手机端下载测试地址](网络工具/云优选手机版/README.md) |
 | 系统工具 | 后续工具放在此分类 | — | [分类目录](系统工具/README.md) |
 | 开发工具 | 后续工具放在此分类 | — | [分类目录](开发工具/README.md) |
 
 ## 下载方式
 
-进入对应工具的说明页，点击“下载便携包”。程序压缩包放在 [Releases](https://github.com/naxianjin/portable-toolbox/releases)，仓库目录保留说明、PDF 和校验信息。
+进入对应工具的说明页，点击“下载便携包”。Android 工具直接下载 APK。程序安装包放在 [Releases](https://github.com/naxianjin/portable-toolbox/releases)，仓库目录保留说明、PDF 和校验信息。
 
 GitHub 的 **Code → Download ZIP** 下载的是本仓库的说明文件；安装工具请使用 Releases 中对应的程序包。
 
