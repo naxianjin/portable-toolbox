@@ -24,7 +24,7 @@ SHA256：`030040766914f156bb22fcce6c919eebb1af2d067a5ecc647993ab1119cd3c04`。
 
 本轮独立运行84项JVM/Robolectric/Compose测试及额外6项审核测试均通过；签名Release静态验收与16KB对齐通过，Lint 0错误、4警告。以上不代替真机验收，实际测速、系统后台策略和桌面显示仍需设备验证。
 
-完整源码、构建脚本、文档与验收记录保存在作者的私有 `cloudflare-ip-subscription` 仓库；私有仓库发行版也保存相同 APK、校验文件及发布说明。公开工具箱提供下载副本。本轮源码提交与发行验收结果见发布记录。
+完整源码、构建脚本、文档与验收记录保存在作者的私有 `cloudflare-ip-subscription` 仓库；私有仓库发行版也保存相同 APK、校验文件及发布说明。公开工具箱提供下载副本。本轮源码提交：`73e2af1a69435cd7c6607492c7cc0c8567de540c`；发行与下载验收结果见发布记录。
 
 libXray/Xray-core、AndroidX、Kotlin、OkHttp、ZXing 等第三方组件的许可和来源随 APK 打包；界面历史参考项目的 MIT 许可保留在包内，不改变各组件原许可。
 
