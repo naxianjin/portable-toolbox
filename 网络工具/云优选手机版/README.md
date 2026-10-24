@@ -1,10 +1,13 @@
 # 云优选手机版 · Android 测试版
 
-当前版本 **0.1.18-test / versionCode 19**，适用于 **Android 8 及以上 / ARM64**。手机本地优选 Cloudflare IP，再按场景预览和发布订阅。
+当前版本 **0.1.19-test / versionCode 20**，适用于 **Android 8 及以上 / ARM64**。手机本地优选 Cloudflare IP，再按场景预览和发布订阅。
 
-[下载页面](https://github.com/naxianjin/portable-toolbox/releases/tag/yunyouxuan-android-v0.1.18-test) · [直接下载 APK](https://github.com/naxianjin/portable-toolbox/releases/download/yunyouxuan-android-v0.1.18-test/YunYouXuan-Android-arm64-v0.1.18-test.apk) · [SHA256](https://github.com/naxianjin/portable-toolbox/releases/download/yunyouxuan-android-v0.1.18-test/YunYouXuan-Android-arm64-v0.1.18-test.apk.sha256) · [在线订阅器](https://cloudflaresub.naxianjin8.workers.dev/)
+[下载页面](https://github.com/naxianjin/portable-toolbox/releases/tag/yunyouxuan-android-v0.1.19-test) · [直接下载 APK](https://github.com/naxianjin/portable-toolbox/releases/download/yunyouxuan-android-v0.1.19-test/YunYouXuan-Android-arm64-v0.1.19-test.apk) · [SHA256](https://github.com/naxianjin/portable-toolbox/releases/download/yunyouxuan-android-v0.1.19-test/YunYouXuan-Android-arm64-v0.1.19-test.apk.sha256) · [在线订阅器](https://cloudflaresub.naxianjin8.workers.dev/)
 
 ## 更新内容
+
+- 0.1.19 订阅页优先展示当前测速场景，过期或时间异常的结果提示重新测速并禁用发布，保留旧订阅复制入口及 24 小时有效期校验。
+- 测速顶部圆圈使用运行指示并显示轨道；下方准确数量和阶段进度条继续保留，避免极小进度只显示一个点。
 
 - 保留奶油色、炭灰和陶土橙主题，增加测速按钮与菜单图标形变。
 - 日志按钮原位展开为历史面板；0.1.18 固定正文排版，使用绘制层连续改变轮廓、位置和透明度，减少展开时的内容切换。
@@ -19,12 +22,12 @@
 
 ## 校验与验证范围
 
-APK：`YunYouXuan-Android-arm64-v0.1.18-test.apk`，44,391,790 字节。
+APK：`YunYouXuan-Android-arm64-v0.1.19-test.apk`，44,391,790 字节。
 
-SHA256：`0cd251d8a27774f1100a0a8f5b3a4c5ea913e0a9f85fd7a2b53d59d938e13160`。
+SHA256：`b3a3946553adf212901521a97729e40f208af19e7ff3347933923f885917a6b9`。
 
-0.1.18 构建验收记录：116 项 JVM/Robolectric/Compose 测试通过，Lint 0 错误、4 条既有警告；Debug、AndroidTest、签名 Release 构建及签名、16 KB 静态对齐检查通过。桌面逐帧检查不能证明真机帧率。
+0.1.19 构建验收记录：120 项 JVM/Robolectric/Compose 测试通过，Lint 0 错误、4 条既有警告；Debug、AndroidTest、签名 Release 构建及签名、16 KB 静态对齐检查通过。桌面逐帧检查不能证明真机帧率。
 
 未完成真机覆盖安装、荣耀 Magic7 Pro / Android 16 长时间前台与锁屏测速、真实节点端到端及设备仪器测试，仍作为测试版发行。Windows 便携版独立保持 v1.3.7。
 
-源码和完整验收记录在作者私有 cloudflare-ip-subscription 仓库；公开工具箱提供同一 APK。Android 实现提交为 `ef0228d5be902cb25e9636e0745a2adfc005d619`。第三方组件的许可与来源随 APK 保留。
+源码和完整验收记录在作者私有 cloudflare-ip-subscription 仓库；公开工具箱提供同一 APK。Android 实现提交为 `b962bbd289ce0a2c5dfbda5c4fcf1f79a7b325a8`。第三方组件的许可与来源随 APK 保留。
